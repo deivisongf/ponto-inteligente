@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material'; 
 
+import { Login } from '../../models';
+
 @Component({
   selector: 'app-login-pf',
   templateUrl: './login.component.html',
@@ -36,7 +38,9 @@ export class LoginComponent implements OnInit {
       );
       return;   
     }
-    alert(JSON.stringify(this.form.value));
+
+    const login: Login = this.form.value;
+    alert('Email: ' + login.email + ' e Senha: ' + login.senha );
   }
 
 }
