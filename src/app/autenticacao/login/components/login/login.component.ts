@@ -28,4 +28,15 @@ export class LoginComponent implements OnInit {
       senha: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
+
+  logar(){
+    if(this.form.invalid){
+      this.snackBar.open(
+        "Dados inválidos", "Erro", {duration: 5000}
+      );
+      return;   
+    }
+    alert(JSON.stringify(this.form.value));
+  }
+
 }
