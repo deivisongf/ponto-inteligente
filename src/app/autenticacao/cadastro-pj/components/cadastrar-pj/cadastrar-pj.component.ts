@@ -66,8 +66,6 @@ export class CadastrarPjComponent implements OnInit {
     );
 
     return false;
-
-    //alert(JSON.stringify(cadastroPj));
   }
 
 }
