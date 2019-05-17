@@ -5,12 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { LoginModule,
-         LoginRoutingModule,
-         CadastroPjModule,
-         CadastroPjRoutingModule,
-         CadastroPfModule 
-        } from './autenticacao';
+import { 
+  LoginModule, 
+  LoginRoutingModule, 
+  CadastroPjModule,
+  CadastroPjRoutingModule,
+  CadastroPfModule,
+  CadastroPfRoutingModule
+} from './autenticacao';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -26,7 +28,8 @@ import { AppRoutingModule } from './app-routing.module';
     CadastroPjModule,
     CadastroPjRoutingModule,
     CadastroPfModule,
-    
+    CadastroPfRoutingModule,
+
     AppRoutingModule
   ],
   providers: [],

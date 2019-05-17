@@ -6,13 +6,14 @@ import { environment as env } from '../../../../environments/environment';
 import { CadastroPj } from '../';
 
 @Injectable()
-export class CadastroPjService {
+export class CadastrarPjService {
 
   private readonly PATH: string = 'cadastrar-pj';
 
   constructor(private http: HttpClient) { }
 
-  cadastrar(CadastroPj: CadastroPj): Observable<any> {
-    return this.http.post(env.baseApiUrl + this.PATH, CadastroPj);
+  cadastrar(cadastroPj: CadastroPj): Observable<any> {
+  	  return this.http.post(env.baseApiUrl + this.PATH, cadastroPj);
   }
+
 }

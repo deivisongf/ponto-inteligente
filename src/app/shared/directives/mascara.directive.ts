@@ -4,10 +4,8 @@ import {
   Input, 
   ElementRef 
 } from '@angular/core';
-
 import { 
-  NG_VALUE_ACCESSOR, 
-  ControlValueAccessor 
+  NG_VALUE_ACCESSOR, ControlValueAccessor 
 } from '@angular/forms';
 
 @Directive({
@@ -18,7 +16,6 @@ import {
     multi: true 
   }]
 })
-
 export class MascaraDirective implements ControlValueAccessor {
 
   onTouched: any;

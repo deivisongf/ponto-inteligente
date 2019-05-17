@@ -8,7 +8,7 @@ import {
   MatInputModule,
   MatButtonModule,
   MatListModule,
-  MatToolbarModule,
+  MatTooltipModule,
   MatIconModule,
   MatSnackBarModule
 } from '@angular/material';
@@ -19,10 +19,6 @@ import { LoginComponent, LogarComponent } from './components';
 import { LoginService } from './services';
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    LogarComponent
-  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -31,14 +27,17 @@ import { LoginService } from './services';
     MatInputModule,
     MatButtonModule,
     MatListModule,
-    MatToolbarModule,
+    MatTooltipModule,
     MatIconModule,
     MatSnackBarModule,
     FlexLayoutModule
   ],
-  providers:[
-    LoginService
+  declarations: [
+  	LoginComponent,
+  	LogarComponent
+  ],
+  providers: [
+  	LoginService
   ]
 })
-
 export class LoginModule { }

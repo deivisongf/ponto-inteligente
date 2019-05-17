@@ -1,2 +1,2 @@
 export * from './cpf.validator';
-export * from './cnpj.validators';
+export * from './cnpj.validator';

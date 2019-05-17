@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { CadastrarPfComponent } from './components';
+import { 
+	CadastrarPfComponent, 
+	CadastroPfComponent 
+} from './components';
 
 @NgModule({
-  declarations: [
-    CadastrarPfComponent
-  ],
   imports: [
-    CommonModule
+    CommonModule,
+    FlexLayoutModule,
+    RouterModule
+  ],
+  declarations: [
+  	CadastrarPfComponent,
+  	CadastroPfComponent
   ]
 })
-
 export class CadastroPfModule { }

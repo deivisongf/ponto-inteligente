@@ -1,12 +1,15 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 
 import { CadastroPjService } from './cadastro-pj.service';
 
 describe('CadastroPjService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
-
-  it('should be created', () => {
-    const service: CadastroPjService = TestBed.get(CadastroPjService);
-    expect(service).toBeTruthy();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [CadastroPjService]
+    });
   });
+
+  it('should be created', inject([CadastroPjService], (service: CadastroPjService) => {
+    expect(service).toBeTruthy();
+  }));
 });
