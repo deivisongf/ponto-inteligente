@@ -38,4 +38,16 @@ export class CadastrarPfComponent implements OnInit {
     });
   }
 
+  cadastrarPf(){
+    if(this.form.invalid){
+      return;
+    }
+
+    alert(JSON.stringify(this.form.value));
+
+    return false;
+  }
+
+  
+
 }
