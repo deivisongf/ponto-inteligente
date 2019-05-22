@@ -47,11 +47,11 @@ export class LoginComponent implements OnInit {
             atob(data['data']['token'].split('.')[1]));
           console.log(JSON.stringify(usuarioData));
           if (usuarioData['role'] == 'ROLE_ADMIN') {
-          	alert('Deve redirecionar para a página de admin');
-            //this.router.navigate(['/admin']);
+          	//alert('Deve redirecionar para a página de admin');
+            this.router.navigate(['/admin']);
           } else {
-          	alert('Deve redirecionar para a página de funcionário');
-            //this.router.navigate(['/funcionario']);
+          	//alert('Deve redirecionar para a página de funcionário');
+            this.router.navigate(['/funcionario']);
           }
         },
         err => {
