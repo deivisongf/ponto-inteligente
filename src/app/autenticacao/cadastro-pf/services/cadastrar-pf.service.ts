@@ -10,11 +10,10 @@ export class CadastrarPfService {
 
   private readonly PATH: string = 'cadastrar-pf';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) { }
 
-  cadastrar(CadastroPf: CadastroPf): Observable<any>{
-    return this.http.post(env.baseApiUrl + this.PATH, CadastroPf);
+  cadastrar(cadastroPf: CadastroPf): Observable<any> {
+  	  return this.http.post(env.baseApiUrl + this.PATH, cadastroPf);
   }
+
 }

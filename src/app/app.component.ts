@@ -6,21 +6,20 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent implements OnInit {
-  title = 'app';
 
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 
-  ngOnInit(){
+  ngOnInit() {
   }
 
-  sair(){
-    delete localStorage['token'];
-    this.router.navigate(['/']);
+  sair() {
+  	delete localStorage['token'];
+  	this.router.navigate(['/']);
   }
 
   autenticado(): boolean {
     return localStorage['token'];
   }
+
 }

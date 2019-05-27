@@ -17,18 +17,13 @@ import {
   MatCardModule
 } from '@angular/material';
 
-import  { 
-  ListagemComponent,
-  LancamentoComponent,
-  FuncionarioComponent
- } from './components';
+import { 
+	ListagemComponent, 
+	LancamentoComponent,
+	FuncionarioComponent 
+} from './components';
 
 @NgModule({
-  declarations: [
-    ListagemComponent,
-    LancamentoComponent,
-    FuncionarioComponent
-  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -44,7 +39,11 @@ import  {
     MatPaginatorModule,
     MatSortModule,
     MatCardModule
+  ],
+  declarations: [
+  	ListagemComponent, 
+  	LancamentoComponent,
+  	FuncionarioComponent
   ]
 })
-
 export class FuncionarioModule { }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 
-import {
+import { 
   Tipo
 } from '../../../shared';
 
@@ -23,48 +23,78 @@ export class LancamentoComponent implements OnInit {
   ultimoTipoLancado: string;
 
   constructor(
-    private snackBar: MatSnackBar,
-    private router : Router
-  ) { }
+  	private snackBar: MatSnackBar,
+    private router: Router) { }
 
   ngOnInit() {
-      this.dataAtual = moment().format('DD/MM/YYYY HH:mm:ss');
-      this.dataAtualEn = moment().format('YYYY-MM-DD HH:mm:ss');
-      this.obterGeolocation();
-      this.ultimoTipoLancado = '';
-      this.obterUltimoLancamento();
+  	this.dataAtual = moment().format('DD/MM/YYYY HH:mm:ss');
+  	this.dataAtualEn = moment().format('YYYY-MM-DD HH:mm:ss');
+  	this.obterGeoLocation();
+    this.ultimoTipoLancado = '';
+    this.obterUltimoLancamento();
   }
 
-  obterGeolocation(): string {
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(position => this.geoLocation = `${position.coords.latitude},${position.coords.longitude}`);
+  obterGeoLocation(): string {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => 
+        	this.geoLocation = `${position.coords.latitude},${position.coords.longitude}`);
     }
-
     return '';
   }
 
-  iniciarTrabalho(){
+  iniciarTrabalho() {
     this.cadastrar(Tipo.INICIO_TRABALHO);
   }
 
-  terminarTrabalho(){
+  terminarTrabalho() {
     this.cadastrar(Tipo.TERMINO_TRABALHO);
   }
 
-  iniciarAlmoco(){
+  iniciarAlmoco() {
     this.cadastrar(Tipo.INICIO_ALMOCO);
   }
 
-  terminarAlmoco(){
+  terminarAlmoco() {
     this.cadastrar(Tipo.TERMINO_ALMOCO);
   }
 
-  obterUltimoLancamento(){
+  obterUltimoLancamento() {
     this.ultimoTipoLancado = '';
   }
 
-  cadastrar(tipo: Tipo){
-    alert();
+  cadastrar(tipo: Tipo) {
+  	alert(`Tipo: ${tipo}, dataAtualEn: ${this.dataAtualEn}, 
+  		geolocation: ${this.geoLocation}`);
+  }
+
+  obterUrlMapa(): string {
+  	return "https://www.google.com/maps/search/?api=1&query=" + 
+  		this.geoLocation;
+  }
+
+  exibirInicioTrabalho(): boolean {
+  	return this.ultimoTipoLancado == '' || 
+  		this.ultimoTipoLancado == Tipo.TERMINO_TRABALHO;
+  }
+
+  exibirTerminoTrabalho(): boolean {
+  	return this.ultimoTipoLancado == Tipo.INICIO_TRABALHO || 
+  		this.ultimoTipoLancado == Tipo.TERMINO_ALMOCO;
+  }
+
+  exibirInicioAlmoco(): boolean {
+  	return this.ultimoTipoLancado == Tipo.INICIO_TRABALHO;
+  }
+
+  exibirTerminoAlmoco(): boolean {
+  	return this.ultimoTipoLancado == Tipo.INICIO_ALMOCO;
   }
 
 }
+
+
+
+
+
+
+
