@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {
   MatToolbarModule,
   MatIconModule
 } from '@angular/material';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -16,11 +18,17 @@ import {
   CadastroPfModule,
   CadastroPfRoutingModule
 } from './autenticacao';
+
 import { AppRoutingModule } from './app-routing.module';
+
 import { 
   FuncionarioModule, 
   FuncionarioRoutingModule 
 } from './funcionario';
+
+import {
+  AdminModule
+} from './admin';
 
 @NgModule({
   declarations: [
@@ -40,6 +48,7 @@ import {
     CadastroPfRoutingModule,
     FuncionarioModule,
     FuncionarioRoutingModule,
+    AdminModule,
 
     AppRoutingModule
   ],
