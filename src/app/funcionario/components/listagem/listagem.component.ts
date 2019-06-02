@@ -11,7 +11,10 @@ import {
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-import { LancamentoService, Lancamento } from '../../../shared';
+import { 
+  LancamentoService, 
+  Lancamento
+} from '../../../shared';
 
 @Component({
   selector: 'app-listagem',

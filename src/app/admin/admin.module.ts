@@ -8,11 +8,12 @@ import {
   MatButtonModule,
   MatListModule,
   MatTooltipModule,
+  MatIconModule,
   MatSnackBarModule,
   MatTableModule,
   MatSelectModule,
   MatRadioModule,
-  MatDatepickerModule,
+  MatDatepickerModule, 
   MatNativeDateModule,
   MAT_DATE_LOCALE,
   MatDialogModule,
@@ -28,50 +29,59 @@ import { SharedModule } from '../shared/shared.module';
 import { 
   HttpUtilService, 
   LancamentoService,
-  PtBrMatPaginatorIntl 
+  PtBrMatPaginatorIntl,
+  FuncionarioService
 } from '../shared';
 
 import { 
-  ListagemComponent, 
-  AtualizacaoComponent, 
-  CadastroComponent ,
+	ListagemComponent,
+	CadastroComponent,
+	AtualizacaoComponent,
   AdminComponent
 } from './components';
 
 @NgModule({
-  declarations: [
-    ListagemComponent,
-    AtualizacaoComponent, 
-    CadastroComponent,
-    AdminComponent
-  ],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
     FormsModule,
     MatInputModule,
     MatButtonModule,
     MatListModule,
     MatTooltipModule,
+    MatIconModule,
     MatSnackBarModule,
     MatTableModule,
     MatSelectModule,
     MatRadioModule,
-    MatDatepickerModule,
+    MatDatepickerModule, 
     MatNativeDateModule,
     MatDialogModule,
     MatPaginatorModule,
     MatSortModule,
     SharedModule
   ],
-  providers:[
+  declarations: [
+  	ListagemComponent, 
+  	CadastroComponent, 
+  	AtualizacaoComponent,
+    AdminComponent
+  ],
+  providers: [
     LancamentoService,
     HttpUtilService,
     MatPaginatorIntl,
-    { provide: MAT_DATE_LOCALE, useValue:'pt-BR' },
+    FuncionarioService,
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     { provide: MatPaginatorIntl, useClass: PtBrMatPaginatorIntl }
-  ]
+  ],
 })
 export class AdminModule { }
+
+
+
+
+
+
